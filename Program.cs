@@ -9,24 +9,37 @@ namespace Ejercicio15
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingrese primer numero: ");
-            double PrimerNumero = double.Parse(Console.ReadLine());
-
-            Console.Write("\nIngrese segundo numero: ");
-            double SegundoNumero = double.Parse(Console.ReadLine());
-
-            Console.Write("\nIngrese operacion + - * /: ");
-            string Ope = Console.ReadLine();
-
-            while (Ope != "+" && Ope != "-" && Ope != "*" && Ope != "/")
+            string rta = "s";
+            do
             {
-                Console.Write("\nError. Reingrese: ");
-                Ope = Console.ReadLine();
-            }
+                Console.Write("Ingrese primer numero: ");
+                double PrimerNumero = double.Parse(Console.ReadLine());
 
-            Calculadora.Calcular(PrimerNumero, SegundoNumero, Ope);
+                Console.Write("\nIngrese segundo numero: ");
+                double SegundoNumero = double.Parse(Console.ReadLine());
 
-            Console.ReadKey();
+                Console.Write("\nIngrese operacion + - * /: ");
+                string Ope = Console.ReadLine();
+
+                while (Ope != "+" && Ope != "-" && Ope != "*" && Ope != "/")
+                {
+                    Console.Write("\nError. Reingrese: ");
+                    Ope = Console.ReadLine();
+                }
+
+                Calculadora.Calcular(PrimerNumero, SegundoNumero, Ope);
+
+                Console.Write("\nDesea continuar? S/N: ");
+                rta = Console.ReadLine();
+
+                while (rta != "s" && rta != "S" && rta != "n" && rta != "N")
+                {
+                    Console.Write("Error. Reingrese: ");
+                    rta = Console.ReadLine();
+                }
+            } while (rta == "s");
+
+                Console.ReadKey();
         }
     }
 }

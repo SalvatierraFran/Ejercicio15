@@ -37,7 +37,6 @@ namespace Ejercicio15
                 {
                     Console.Write("\nError. No se puede dividir por cero");
                 }
-
             }
         }
 
