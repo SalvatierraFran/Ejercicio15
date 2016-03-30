@@ -28,11 +28,16 @@ namespace Ejercicio15
             }
             else
             {
-                if(Validar(numDos)==true)
+                if (Validar(numDos) == true)
                 {
                     resultado = numUno / numDos;
                     mostrar(resultado);
                 }
+                else
+                {
+                    Console.Write("\nError. No se puede dividir por cero");
+                }
+
             }
         }
 
